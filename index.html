@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aasif Hussain Hurrah | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --bg-primary: #0b1120;
+      --bg-secondary: #111827;
+      --bg-card: #162033;
+      --border-color: rgba(148, 163, 184, 0.14);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent: #38bdf8;
+      --accent-secondary: #818cf8;
+      --accent-glow: rgba(56, 189, 248, 0.22);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      transition: color 0.2s;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* Container & Sections */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-header {
+      margin-bottom: 2.75rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Hero Section with Profile Photo */
+    .hero {
+      padding-top: 8.5rem;
+      padding-bottom: 5.5rem;
+      position: relative;
+      background: radial-gradient(circle at 80% 25%, rgba(56, 189, 248, 0.1), transparent 45%),
+                  radial-gradient(circle at 15% 70%, rgba(129, 140, 248, 0.08), transparent 45%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-headline {
+      font-size: clamp(1rem, 1.8vw, 1.22rem);
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 1.35rem;
+    }
+
+    .hero-bio {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 1.85rem;
+    }
+
+    .hero-photo-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo-frame {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      border-radius: 1.5rem;
+      padding: 5px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--accent-glow);
+    }
+
+    .hero-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1.25rem;
+      display: block;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.78rem 1.4rem;
+      border-radius: 0.6rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #0284c7);
+      color: #0b1120;
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(56, 189, 248, 0.3);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .career-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .career-label {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-right: 0.4rem;
+      font-weight: 600;
+    }
+
+    .tag-pill {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: #cbd5e1;
+    }
+
+    /* Cards & Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    /* Education */
+    .edu-year {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.8rem;
+    }
+
+    .edu-degree {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .edu-inst {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .edu-cgpa {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #34d399;
+    }
+
+    /* Skills */
+    .skill-category-title {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 1.15rem;
+      color: var(--text-primary);
+    }
+
+    .skill-category-title i {
+      color: var(--accent);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .skill-badge {
+      font-size: 0.83rem;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.5rem;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid var(--border-color);
+      color: #e2e8f0;
+    }
+
+    /* Projects */
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-type {
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.65rem;
+    }
+
+    .project-desc {
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-bottom: 1.35rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.4rem 0.75rem;
+    }
+
+    .feature-list li {
+      font-size: 0.83rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .feature-list li::before {
+      content: "▹";
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .tech-chip {
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 0.4rem;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+    }
+
+    .mini-projects-box {
+      margin-top: 2rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1.75rem;
+    }
+
+    .mini-projects-box h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .mini-projects-box p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1.1rem;
+    }
+
+    /* Certifications with Image Previews */
+    .cert-img-card {
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .cert-thumb-wrapper {
+      position: relative;
+      width: 100%;
+      height: 185px;
+      background: #0f172a;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .cert-thumb-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .cert-img-card:hover .cert-thumb-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .cert-zoom-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(11, 17, 32, 0.85);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      border-radius: 0.4rem;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      backdrop-filter: blur(4px);
+    }
+
+    .cert-body {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cert-title {
+      font-weight: 700;
+      font-size: 1.02rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .cert-issuer {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .cert-date {
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    .other-certs-box {
+      margin-top: 2rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1.5rem 1.75rem;
+    }
+
+    .other-certs-box h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.9rem;
+      color: var(--text-primary);
+    }
+
+    /* Fullscreen Lightbox Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(5, 9, 20, 0.92);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      max-height: 82vh;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+    }
+
+    .modal-caption {
+      margin-top: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 1rem;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -42px;
+      right: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      transition: border-color 0.2s;
+    }
+
+    .contact-item:hover {
+      border-color: var(--accent);
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-value {
+      font-weight: 600;
+      font-size: 0.93rem;
+      word-break: break-word;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-photo-wrapper {
+        order: -1;
+      }
+      .hero-photo-frame {
+        width: 220px;
+        height: 220px;
+      }
+      .hero-actions, .career-tags {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: var(--bg-secondary);
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+        gap: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">AASIF HUSSAIN</a>
+      <button class="menu-toggle" aria-label="Toggle Menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero / About Section -->
+  <section id="about" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="availability-badge">
+            <span class="dot"></span> Open to Opportunities & Entry-Level Roles
+          </div>
+          <h1>Aasif Hussain Hurrah</h1>
+          <p class="hero-headline">
+            M.Sc. Information Technology Graduate  |  Data Analytics Enthusiast  |  Python & SQL Learner  |  Web Developer
+          </p>
+          <p class="hero-bio">
+            I am an M.Sc. Information Technology graduate with a strong foundation in web development, databases, and data analytics. I enjoy solving real-world problems through technology and have built academic projects using HTML, CSS, JavaScript, PHP, MySQL, and Python. I am currently strengthening my skills in SQL, Excel, Power BI, and Python while seeking opportunities as a Data Analyst, Data Entry Operator, or Junior Software/Web Developer. I am a quick learner with strong analytical thinking, problem-solving, and teamwork skills.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fas fa-folder-open"></i> View Projects
+            </a>
+            <a href="https://github.com/AasifHussain12" target="_blank" rel="noopener" class="btn btn-secondary">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/aasifhussainhurrah" target="_blank" rel="noopener" class="btn btn-secondary">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fas fa-envelope"></i> Contact Me
+            </a>
+          </div>
+
+          <div class="career-tags">
+            <span class="career-label">Target Roles:</span>
+            <span class="tag-pill">Data Analyst</span>
+            <span class="tag-pill">SQL Developer</span>
+            <span class="tag-pill">Python Developer (Entry Level)</span>
+            <span class="tag-pill">Web Developer</span>
+            <span class="tag-pill">Business Analyst (Entry Level)</span>
+            <span class="tag-pill">Database Developer</span>
+            <span class="tag-pill">Data Entry Operator</span>
+            <span class="tag-pill">Software Engineer (Fresher)</span>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrapper">
+          <div class="hero-photo-frame">
+            <img src="profile.jpeg" alt="Aasif Hussain Hurrah" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Academic Background</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="edu-year">2024 – 2026</span>
+          <h3 class="edu-degree">Master of Science (M.Sc.) – Information Technology</h3>
+          <p class="edu-inst">Islamic University of Science & Technology (IUST), Awantipora</p>
+          <p class="edu-cgpa"><i class="fas fa-award"></i> CGPA: 8.2 / 10</p>
+        </div>
+
+        <div class="card">
+          <span class="edu-year">2019 – 2024</span>
+          <h3 class="edu-degree">Bachelor of Science (B.Sc.) – Information Technology</h3>
+          <p class="edu-inst">S.M. Iqbal College (Affiliated with University of Kashmir)</p>
+          <p class="edu-cgpa"><i class="fas fa-award"></i> CGPA: 7.7 / 10 (≈77%)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Core Competencies</span>
+        <h2 class="section-title">Technical Skills</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="skill-category-title"><i class="fas fa-code"></i> Programming & Scripting</h3>
+          <div class="skill-list">
+            <span class="skill-badge">Python (Basic)</span>
+            <span class="skill-badge">HTML5</span>
+            <span class="skill-badge">CSS3</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">PHP</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="skill-category-title"><i class="fas fa-database"></i> Databases & Data Analytics</h3>
+          <div class="skill-list">
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">PostgreSQL</span>
+            <span class="skill-badge">MySQL</span>
+            <span class="skill-badge">Database Management</span>
+            <span class="skill-badge">Data Cleaning</span>
+            <span class="skill-badge">Microsoft Excel</span>
+            <span class="skill-badge">Power BI (Learning)</span>
+            <span class="skill-badge">Data Visualization (Learning)</span>
+            <span class="skill-badge">Basic Statistics</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="skill-category-title"><i class="fas fa-tools"></i> Tools & Software</h3>
+          <div class="skill-list">
+            <span class="skill-badge">Git</span>
+            <span class="skill-badge">GitHub</span>
+            <span class="skill-badge">VS Code</span>
+            <span class="skill-badge">XAMPP</span>
+            <span class="skill-badge">phpMyAdmin</span>
+            <span class="skill-badge">Microsoft Word</span>
+            <span class="skill-badge">Microsoft Excel</span>
+            <span class="skill-badge">Microsoft PowerPoint</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="skill-category-title"><i class="fas fa-robot"></i> AI Productivity & Supporting Skills</h3>
+          <div class="skill-list">
+            <span class="skill-badge">AI Fundamentals</span>
+            <span class="skill-badge">AI Tools</span>
+            <span class="skill-badge">Prompt Engineering (Basic)</span>
+            <span class="skill-badge">Gemini AI</span>
+            <span class="skill-badge">GitHub Copilot</span>
+            <span class="skill-badge">Microsoft Copilot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Academic & Practical Work</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+
+      <div class="grid-2">
+        <!-- Project 1 -->
+        <div class="card project-card">
+          <div>
+            <div class="project-type">M.Sc. Major Project • Smart Carpool / Ride Sharing</div>
+            <h3 class="project-title">Safaar Saathi</h3>
+            <p class="project-desc">
+              A web-based ride-sharing platform built for university students that enables users to search, create, and book rides securely with administrative oversight.
+            </p>
+            <ul class="feature-list">
+              <li>User Authentication</li>
+              <li>Admin Verification</li>
+              <li>Ride Search & Booking</li>
+              <li>Seat Management</li>
+              <li>Driver Approval</li>
+              <li>Planned Live Tracking & Chatbot</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-chip">HTML</span>
+            <span class="tech-chip">CSS</span>
+            <span class="tech-chip">JavaScript</span>
+            <span class="tech-chip">PHP</span>
+            <span class="tech-chip">MySQL</span>
+            <span class="tech-chip">XAMPP</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card project-card">
+          <div>
+            <div class="project-type">B.Sc. Major Project • Web Application</div>
+            <h3 class="project-title">Smart Healthcare Website</h3>
+            <p class="project-desc">
+              A comprehensive healthcare management system designed for hospitals and clinics to streamline patient appointments, doctor schedules, and medical records.
+            </p>
+            <ul class="feature-list">
+              <li>Patient Registration</li>
+              <li>Doctor Management</li>
+              <li>Appointment Booking</li>
+              <li>Medical Records</li>
+              <li>Secure Authentication</li>
+              <li>Admin Control Panel</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-chip">HTML</span>
+            <span class="tech-chip">CSS</span>
+            <span class="tech-chip">PHP</span>
+            <span class="tech-chip">MySQL</span>
+            <span class="tech-chip">VS Code</span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card project-card">
+          <div>
+            <div class="project-type">Data Analytics Project</div>
+            <h3 class="project-title">Corporate Data Analyzer</h3>
+            <p class="project-desc">
+              A Python-based data analysis tool developed to process raw corporate sales datasets, clean inconsistencies, and generate actionable business insights.
+            </p>
+            <ul class="feature-list">
+              <li>Automated Data Cleaning</li>
+              <li>Sales Trend Analysis</li>
+              <li>Report Generation</li>
+              <li>Business Insights</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip">Pandas</span>
+            <span class="tech-chip">CSV</span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="card project-card">
+          <div>
+            <div class="project-type">Relational Database Design</div>
+            <h3 class="project-title">Online Bookstore Database</h3>
+            <p class="project-desc">
+              A structured relational database schema engineered in PostgreSQL to handle inventory, customer records, and order transactions using optimized SQL queries.
+            </p>
+            <ul class="feature-list">
+              <li>Books Inventory Table</li>
+              <li>Customers Management</li>
+              <li>Order Processing Table</li>
+              <li>SQL Queries & CRUD</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-chip">PostgreSQL</span>
+            <span class="tech-chip">SQL</span>
+            <span class="tech-chip">Database Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Python Mini Projects -->
+      <div class="mini-projects-box">
+        <h3><i class="fab fa-python" style="color: var(--accent);"></i> Python Mini Projects Collection</h3>
+        <p>Hands-on console and logic-building programs created while practicing Python fundamentals:</p>
+        <div class="skill-list">
+          <span class="skill-badge">Student Management System</span>
+          <span class="skill-badge">ATM Simulator</span>
+          <span class="skill-badge">File Organizer</span>
+          <span class="skill-badge">Contact Book</span>
+          <span class="skill-badge">To-Do List</span>
+          <span class="skill-badge">Password Generator</span>
+          <span class="skill-badge">Quiz Game</span>
+          <span class="skill-badge">Calculator</span>
+          <span class="skill-badge">Rock Paper Scissors</span>
+          <span class="skill-badge">Number Guessing Game</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Verified Credentials (Click to Enlarge)</span>
+        <h2 class="section-title">Certifications & Courses</h2>
+      </div>
+
+      <div class="grid-2">
+        <!-- Certificate 1: SQL -->
+        <div class="card cert-img-card" onclick="openModal('cert-sql.jpg', '30-Days SQL Micro Course – Skill Course (Satish Dhawale)')">
+          <div class="cert-thumb-wrapper">
+            <img src="cert-sql.jpeg" alt="30-Days SQL Micro Course Certificate" />
+            <span class="cert-zoom-badge"><i class="fas fa-expand"></i> View Certificate</span>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-title">30-Days SQL Micro Course</div>
+              <div class="cert-issuer">Skill Course • Instructor: Satish Dhawale</div>
+            </div>
+            <div class="cert-date"><i class="far fa-calendar-check"></i> Issued: October 6, 2026</div>
+          </div>
+        </div>
+
+        <!-- Certificate 2: Python -->
+        <div class="card cert-img-card" onclick="openModal('cert-python.jpg', '30 Days Python Micro Course – SkillCourse (Satish Dhawale)')">
+          <div class="cert-thumb-wrapper">
+            <img src="cert-python.jpeg" alt="30 Days Python Micro Course Certificate" />
+            <span class="cert-zoom-badge"><i class="fas fa-expand"></i> View Certificate</span>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-title">30 Days Python Micro Course</div>
+              <div class="cert-issuer">SkillCourse • Satish Dhawale</div>
+            </div>
+            <div class="cert-date"><i class="far fa-calendar-check"></i> Issued: November 17, 2026</div>
+          </div>
+        </div>
+
+        <!-- Certificate 3: MS Excel -->
+        <div class="card cert-img-card" onclick="openModal('cert-excel.png', 'Introduction to MS Excel – Microsoft & Simplilearn SkillUP')">
+          <div class="cert-thumb-wrapper">
+            <img src="cert-excel.jpeg" alt="Introduction to MS Excel Certificate" />
+            <span class="cert-zoom-badge"><i class="fas fa-expand"></i> View Certificate</span>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-title">Introduction to MS Excel</div>
+              <div class="cert-issuer">Microsoft & Simplilearn SkillUP</div>
+            </div>
+            <div class="cert-date"><i class="far fa-calendar-check"></i> Issued: September 25, 2026</div>
+          </div>
+        </div>
+
+        <!-- Certificate 4: AI Tools -->
+        <div class="card cert-img-card" onclick="openModal('cert-ai.png', 'AI Tools & Claude Workshop – be10x')">
+          <div class="cert-thumb-wrapper">
+            <img src="cert-ai.jpeg" alt="AI Tools & Claude Workshop Certificate" />
+            <span class="cert-zoom-badge"><i class="fas fa-expand"></i> View Certificate</span>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-title">AI Tools & Claude Workshop</div>
+              <div class="cert-issuer">be10x Verified Workshop</div>
+            </div>
+            <div class="cert-date"><i class="far fa-calendar-check"></i> Issued: September 6, 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Courses -->
+      <div class="other-certs-box">
+        <h3><i class="fas fa-graduation-cap" style="color: var(--accent); margin-right: 0.5rem;"></i> Additional Courses & Training</h3>
+        <div class="skill-list">
+          <span class="skill-badge">Web Development Basics (HTML, CSS & JS) – Great Learning</span>
+          <span class="skill-badge">MySQL Basics – SoloLearn</span>
+          <span class="skill-badge">PHP for Beginners – Udemy</span>
+          <span class="skill-badge">Python Programming – CodeWithHarry</span>
+          <span class="skill-badge">Data Analyst Career Webinar</span>
+          <span class="skill-badge">SWAYAM Plus Registered Learner</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" style="border-bottom: none;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact & Profiles</h2>
+      </div>
+
+      <div class="contact-grid">
+        <a href="mailto:asiff4268@gmail.com" class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">asiff4268@gmail.com</div>
+          </div>
+        </a>
+
+        <a href="tel:+916006476219" class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">+91 6006476219</div>
+          </div>
+        </a>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Galbugh, Ratnipora, Pulwama, J&K, India</div>
+          </div>
+        </div>
+
+        <a href="https://github.com/AasifHussain12" target="_blank" rel="noopener" class="contact-item">
+          <div class="contact-icon"><i class="fab fa-github"></i></div>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">github.com/AasifHussain12</div>
+          </div>
+        </a>
+
+        <a href="https://linkedin.com/in/aasifhussainhurrah" target="_blank" rel="noopener" class="contact-item">
+          <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">linkedin.com/in/aasifhussainhurrah</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Aasif Hussain Hurrah. Built with HTML & CSS.</p>
+  </footer>
+
+  <!-- Certificate Lightbox Modal -->
+  <div id="certModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close" onclick="document.getElementById('certModal').classList.remove('open')">×</button>
+      <img id="modalImg" src="" alt="Certificate Preview" />
+      <div id="modalCaption" class="modal-caption"></div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(imgSrc, caption) {
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modalCaption').textContent = caption;
+      document.getElementById('certModal').classList.add('open');
+    }
+
+    function closeModal(event) {
+      if (event.target.id === 'certModal') {
+        document.getElementById('certModal').classList.remove('open');
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('certModal').classList.remove('open');
+      }
+    });
+  </script>
+
+</body>
+</html>
